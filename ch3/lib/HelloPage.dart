@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: "Flutter Demo",
-        home: HelloPage(title: '하이 월드',)
-    );
-  }
-}
-
 class HelloPage extends StatefulWidget{
   late String title;
+  int count =0;
 
   HelloPage({super.key, required String title}){
     this.title = title;
@@ -27,23 +12,45 @@ class HelloPage extends StatefulWidget{
 
 class _HelloPageState extends State<HelloPage> {
   String message = 'Hello World';
-  Widget build(BuildContext context){
+
+  //int count = 0;
+
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('hello World'),
+        title: Text(widget.title),
       ),
-      body: Text(
-        message,
-        style: TextStyle(fontSize: 50),
+      body:Center(
+        child : Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            message,
+            style: TextStyle(fontSize: 50),
+          ),
+          Text(
+            '${widget.count}',
+            style: TextStyle(fontSize:  50),
+          ),
+        ],
+      ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: (){
-          setState(({
-              message = "헬로 월드";
-          }));
-        }
+          child: Icon(Icons.add),
+          onPressed: ChangeCounter,
       ),
     );
   }
+
+  void ChangeCounter(){
+    setState(() {
+      widget.count++;
+    });
+  }
+  void ChangeMessage(){
+    setState(() {
+      message = "헬로 월드";
+    });
+  }
+}
 
