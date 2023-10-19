@@ -55,6 +55,6 @@ class PuzzleGame{
       if(values[zeroIndex] == 0) return zeroIndex;
     }
 
-    return zeroIndex;
+    return -1;
   }
 }

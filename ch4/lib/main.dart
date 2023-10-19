@@ -2,6 +2,11 @@ import 'package:ch4/PuzzleUI.dart';
 import 'package:flutter/material.dart';
 import 'ContainerTest.dart';
 import 'StackTest.dart';
+import 'PageViewUI.dart';
+import 'TabBarTest.dart';
+import 'BottomNavigationBarTest.dart';
+import 'CenterTest.dart';
+import 'ButtonTest.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const ContainerTest(),
-      home: const PuzzleUI(),
+      home: ButtonTest(),
     );
   }
 }
