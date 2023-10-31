@@ -16,24 +16,7 @@ class _ButtonTestState extends State<ButtonTest> {
         title: Text('Button Test'),
         backgroundColor: Colors.deepPurple,
       ),
-      body: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment :  MainAxisAlignment.center,
-        crossAxisAlignment : CrossAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            color: Colors.red,
-            width: 300,
-            height: 50,
-              ),
-          Container(
-            color: Colors.blue,
-            width: 300,
-            height: 50,
-          )
-            ],
-
-      )
+      body: Image.asset('assets/cat.jpg')
     );
   }
 
