@@ -16,13 +16,7 @@ class _ButtonTestState extends State<ButtonTest> {
         title: Text('Button Test'),
         backgroundColor: Colors.deepPurple,
       ),
-      body: Center(
-        child: IconButton(
-          icon: Icon(Icons.add),
-          iconSize: 200,
-          onPressed: Test,
-        ),
-      ),
+      body: Image.asset('assets/cat.jpg')
     );
   }
 
