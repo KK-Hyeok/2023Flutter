@@ -13,9 +13,9 @@ class _TabBarTestState extends State<TabBarTest> {
   Widget build(BuildContext context) {
     return DefaultTabController(length: 3, child: Scaffold(
       appBar: AppBar(
-        title: Text('Tab'),
-        backgroundColor: Colors.grey,
-        bottom: TabBar(
+        title: Text('Tab Bar'),
+        backgroundColor: Colors.blue,
+        bottom: const TabBar(
           tabs: <Widget>[
             Tab(icon:  Icon(Icons.tag_faces)),
             Tab(text: '메뉴2'),
@@ -24,11 +24,11 @@ class _TabBarTestState extends State<TabBarTest> {
         ),
       ),
       body: TabBarView(children: <Widget>[
-        Container(color: Colors.yellow,
-        margin: EdgeInsets.all(10)),
-        Container(color: Colors.orange,
+        Container(
             margin: EdgeInsets.all(10)),
-        Container(color: Colors.red,
+        Container(
+            margin: EdgeInsets.all(10)),
+        Container(
             margin: EdgeInsets.all(10)),
       ]),
     ));

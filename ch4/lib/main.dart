@@ -7,6 +7,7 @@ import 'TabBarTest.dart';
 import 'BottomNavigationBarTest.dart';
 import 'CenterTest.dart';
 import 'ButtonTest.dart';
+import 'Stack_.dart';
 
 void main() {
   runApp(const MyApp());

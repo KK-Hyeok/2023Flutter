@@ -16,13 +16,24 @@ class _ButtonTestState extends State<ButtonTest> {
         title: Text('Button Test'),
         backgroundColor: Colors.deepPurple,
       ),
-      body: Center(
-        child: IconButton(
-          icon: Icon(Icons.add),
-          iconSize: 200,
-          onPressed: Test,
-        ),
-      ),
+      body: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment :  MainAxisAlignment.center,
+        crossAxisAlignment : CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            color: Colors.red,
+            width: 300,
+            height: 50,
+              ),
+          Container(
+            color: Colors.blue,
+            width: 300,
+            height: 50,
+          )
+            ],
+
+      )
     );
   }
 
