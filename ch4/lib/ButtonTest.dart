@@ -16,7 +16,9 @@ class _ButtonTestState extends State<ButtonTest> {
         title: Text('Button Test'),
         backgroundColor: Colors.deepPurple,
       ),
-      body: Image.asset('assets/cat.jpg')
+      body: CircleAvatar(
+        child: Icon(Icons.person),
+      )
     );
   }
 
