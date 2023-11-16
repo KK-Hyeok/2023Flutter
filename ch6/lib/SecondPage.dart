@@ -1,11 +1,8 @@
-import 'package:ch6/person.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ch6/Person.dart';
 import 'package:flutter/material.dart';
-import '';
-import 'FirstPage.dart';
 
 class SecondPage extends StatefulWidget {
-  const SecondPage({Key?key, required this.person},{super.key});
+  const SecondPage({Key?key, required this.person}):super(key: key);
   final Person person;
 
   @override
@@ -17,16 +14,19 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SecondPage"),
-    ),
+        title: Text('Second Page'),
+        backgroundColor: Colors.blue,
+      ),
       body: Column(
         children: [
           Text(widget.person.name),
+          SizedBox(
+            height: 40,
+          ),
           ElevatedButton(
-            child: const Text("이전 페이지로 이동"),
-            onPressed: (){Navigator.push(
-              context,'ok');
-            );
+            child: Text('이전페이지로 이동'),
+            onPressed: (){
+              Navigator.pop(context, 'ok');
             },
           ),
         ],
