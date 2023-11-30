@@ -24,7 +24,7 @@ class BmiResult extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            _buildIcon(bmi);
+            _buildIcon(bmi)
           ],
         ),),
       );
