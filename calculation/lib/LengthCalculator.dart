@@ -69,7 +69,7 @@ class _LengthCalculatorState extends State<LengthCalculator> {
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value, style: TextStyle(color: Colors.black)), // 텍스트 색상을 흰색으로 설정
+                      child: Text(value, style: TextStyle(color: Colors.black)),
                     );
                   }).toList(),
                 ),
@@ -83,7 +83,7 @@ class _LengthCalculatorState extends State<LengthCalculator> {
             SizedBox(height: 26.0),
             Text(
               '결과: $_result',
-              style: TextStyle(fontSize: 18.0, color: Colors.black), // 텍스트 색상을 흰색으로 설정
+              style: TextStyle(fontSize: 18.0, color: Colors.black),
             ),
             SizedBox(height: 26.0),
             Row(

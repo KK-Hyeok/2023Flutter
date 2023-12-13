@@ -85,9 +85,10 @@ class _TodoListPageState extends State<TodoListPage> {
   void _deleteToDo(DocumentSnapshot doc){
     FirebaseFirestore.instance.collection('todo').doc(doc.id).delete();
   }
-  
+
   void _toggleToDo(DocumentSnapshot doc){
-    FirebaseFirestore.instance.collection('todo').doc(doc.id).update('isDone');
+    FirebaseFirestore.instance.collection('todo2').doc(doc.id).update(
+        {'isDone' : !doc['isDone']}
     );
   }
 }

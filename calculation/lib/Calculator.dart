@@ -2,6 +2,7 @@ import 'package:calculation/LengthCalculator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+// flutter upgrade --force
 
 class Calculator extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _CalculatorState extends State<Calculator> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Text(
-              '$_input',
+              '$_input', // 입력 값
               style: TextStyle(fontSize: 50.0,color: Colors.white),
             ),
             SizedBox(height: 40.0),
@@ -109,8 +110,8 @@ class _CalculatorState extends State<Calculator> {
     return ElevatedButton(
       onPressed: onPressed != null ? () => onPressed() : null,
       style: ElevatedButton.styleFrom(
-        primary: buttonColor ?? Colors.white10, // 원하는 배경 색상으로 변경, 기본값은 파란색
-        onPrimary: iconColor ?? Colors.white, // 아이콘 색상 설정, 기본값은 흰색
+        primary: buttonColor ?? Colors.white10, // 배경 색상 변경 변경
+        onPrimary: iconColor ?? Colors.white, // 아이콘 색상 변경
         fixedSize: Size(100, 80),
       ),
       child: icon,
@@ -121,8 +122,8 @@ class _CalculatorState extends State<Calculator> {
     return ElevatedButton(
       onPressed: onPressed != null ? () => onPressed() : null,
       style: ElevatedButton.styleFrom(
-        primary: buttonColor ?? Colors.white24, // 원하는 배경 색상으로 변경, 기본값은 파란색
-        onPrimary: textColor ?? Colors.white, // 텍스트 색상 설정, 기본값은 흰색
+        primary: buttonColor ?? Colors.white24, // 배경 색상 변경 변경
+        onPrimary: textColor ?? Colors.white, // 아이콘 색상 변경
         fixedSize: Size(100, 80),
       ),
       child: Text(
@@ -132,7 +133,7 @@ class _CalculatorState extends State<Calculator> {
     );
   }
 
-  void _onButtonPressed(String text) {
+  void _onButtonPressed(String text) { // 특정 버튼 눌렀을 때 코드 실행 
     setState(() {
       if (text == '=') {
         _calculateResult();
@@ -144,12 +145,12 @@ class _CalculatorState extends State<Calculator> {
     });
   }
 
-  void _calculateResult() {
+  void _calculateResult() { // 입력한 값을 계산해주는 함수
     try {
       Parser p = Parser();
       Expression exp = p.parse(_input);
       ContextModel cm = ContextModel();
-      double eval = exp.evaluate(EvaluationType.REAL, cm);
+      double eval = exp.evaluate(EvaluationType.REAL, cm); 
 
       _result = eval.toString();
     } catch (e) {
@@ -160,7 +161,7 @@ class _CalculatorState extends State<Calculator> {
     });
   }
 
-  void _clearLastCharacter() {
+  void _clearLastCharacter() { // 입력한 값 하나를 지워주는 함수
     setState(() {
       if (_input.isNotEmpty) {
         _input = _input.substring(0, _input.length - 1);
@@ -168,7 +169,7 @@ class _CalculatorState extends State<Calculator> {
     });
   }
 
-  void _clear() {
+  void _clear() { //입력값 전체를 초기화 시키는 함수
     setState(() {
       _input = '';
       _result = '';
